@@ -1,0 +1,28 @@
+Source: ruby-delayed-job-active-record
+Section: ruby
+Priority: optional
+Maintainer: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Uploaders: Balasankar C <balasankarc@autistici.org>
+Build-Depends: debhelper (>= 7.0.50~),
+               gem2deb,
+               rake,
+               ruby-activerecord (>= 3.0),
+               ruby-delayed-job (>= 3.0),
+               ruby-rspec
+Standards-Version: 3.9.6
+Vcs-Git: git://anonscm.debian.org/pkg-ruby-extras/ruby-delayed-job-active-record.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-ruby-extras/ruby-delayed-job-active-record.git
+Homepage: http://github.com/collectiveidea/delayed_job_active_record
+Testsuite: autopkgtest-pkg-ruby
+XS-Ruby-Versions: all
+
+Package: ruby-delayed-job-active-record
+Architecture: all
+XB-Ruby-Versions: ${ruby:Versions}
+Depends: ruby | ruby-interpreter,
+         ruby-activerecord (>= 3.0),
+         ruby-delayed-job (>= 3.0),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: ActiveRecord backend for DelayedJob
+ ActiveRecord backend for Delayed::Job, originally authored by Tobias Lütke
