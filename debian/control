@@ -5,10 +5,13 @@ Maintainer: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.al
 Uploaders: Balasankar C <balasankarc@autistici.org>
 Build-Depends: debhelper (>= 7.0.50~),
                gem2deb,
+               locales,
                rake,
                ruby-activerecord (>= 3.0),
                ruby-delayed-job (>= 3.0),
-               ruby-rspec
+               ruby-rspec,
+               ruby-sqlite3
+Build-Conflicts: locales-all
 Standards-Version: 3.9.6
 Vcs-Git: git://anonscm.debian.org/pkg-ruby-extras/ruby-delayed-job-active-record.git
 Vcs-Browser: https://anonscm.debian.org/cgit/pkg-ruby-extras/ruby-delayed-job-active-record.git
@@ -25,4 +28,6 @@ Depends: ruby | ruby-interpreter,
          ${misc:Depends},
          ${shlibs:Depends}
 Description: ActiveRecord backend for DelayedJob
- ActiveRecord backend for Delayed::Job, originally authored by Tobias Lütke
+ This gem provides an ActiveRecord backend for Delayed::Job, which is a 
+ Database based asynchronous priority queue system. Delayed Job encapsulates 
+ the common pattern of asynchronously executing longer tasks in the background.
